@@ -1,0 +1,265 @@
+/* ВСТУП */
+
+.eve-intro {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 70px 50px 45px;
+}
+
+.eve-intro h1 {
+    color: var(--burgundy);
+    font-size: 44px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.eve-line {
+    width: 130px;
+    height: 4px;
+    margin: 0 auto 40px;
+    background-color: var(--gold);
+    border-radius: 4px;
+}
+
+.eve-intro p {
+    font-size: 22px;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 25px;
+}
+
+/* ==========================================
+   БЛОКИ СВЯТВЕЧОРА
+========================================== */
+
+.eve-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    align-items: center;
+    gap: 65px;
+
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 65px 50px;
+
+    border-bottom: 1px solid var(--light-gold);
+}
+
+/* ЧЕРГУВАННЯ ТЕКСТУ ТА МАЛЮНКІВ */
+
+.eve-block.eve-reverse {
+    grid-template-columns: 430px minmax(0, 1fr);
+}
+
+.eve-reverse .eve-picture {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.eve-reverse .eve-content {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* ТЕКСТ */
+
+.eve-content h2 {
+    color: var(--burgundy);
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.eve-content h2::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 3px;
+    margin-top: 15px;
+    background-color: var(--gold);
+}
+
+.eve-content p {
+    font-size: 21px;
+    line-height: 1.75;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 24px;
+}
+
+.eve-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   МАЛЮНКИ
+========================================== */
+
+.eve-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.eve-picture img {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    max-height: 440px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ДЗВІН ТРОХИ МЕНШИЙ */
+
+.eve-bell-picture img {
+    max-width: 350px;
+    max-height: 400px;
+}
+
+/* ==========================================
+   ЗАВЕРШАЛЬНИЙ БЛОК
+========================================== */
+
+.eve-final {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 75px 50px 90px;
+    text-align: center;
+}
+
+.eve-final h2 {
+    color: var(--burgundy);
+    font-size: 38px;
+    line-height: 1.35;
+    margin-bottom: 20px;
+}
+
+.eve-final p {
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   ПЛАНШЕТИ
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .eve-intro {
+        padding: 55px 30px 30px;
+    }
+
+    .eve-intro h1 {
+        font-size: 38px;
+    }
+
+    .eve-intro p {
+        font-size: 20px;
+    }
+
+    .eve-block {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 30px;
+        padding: 45px 30px;
+    }
+
+    .eve-block.eve-reverse {
+        grid-template-columns: 300px minmax(0, 1fr);
+    }
+
+    .eve-content h2 {
+        font-size: 30px;
+    }
+
+    .eve-content p {
+        font-size: 19px;
+    }
+
+    .eve-picture img {
+        max-width: 300px;
+    }
+
+    .eve-bell-picture img {
+        max-width: 260px;
+    }
+
+    .eve-final {
+        padding: 60px 30px 70px;
+    }
+
+    .eve-final h2 {
+        font-size: 32px;
+    }
+
+    .eve-final p {
+        font-size: 20px;
+    }
+}
+
+/* ==========================================
+   ТЕЛЕФОНИ
+========================================== */
+
+@media (max-width: 600px) {
+
+    .eve-intro {
+        padding: 40px 20px 20px;
+    }
+
+    .eve-intro h1 {
+        font-size: 32px;
+    }
+
+    .eve-intro p {
+        font-size: 18px;
+        line-height: 1.75;
+        text-align: left;
+        text-indent: 25px;
+    }
+
+    .eve-block,
+    .eve-block.eve-reverse {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .eve-content h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .eve-content p {
+        font-size: 18px;
+        line-height: 1.75;
+        text-align: left;
+        text-indent: 25px;
+    }
+
+    .eve-picture img {
+        max-width: 100%;
+    }
+
+    .eve-bell-picture img {
+        max-width: 280px;
+    }
+
+    .eve-final {
+        padding: 50px 20px 65px;
+    }
+
+    .eve-final h2 {
+        font-size: 28px;
+    }
+
+    .eve-final p {
+        font-size: 18px;
+        line-height: 1.75;
+    }
+}

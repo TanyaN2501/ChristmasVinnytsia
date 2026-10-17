@@ -1,0 +1,562 @@
+
+/* ==========================================
+   КОЛЬОРИ САЙТУ
+========================================== */
+
+:root {
+    --burgundy: #781F2B;
+    --dark-burgundy: #50151F;
+    --gold: #C59A52;
+    --light-gold: #E8C987;
+    --cream: #FFF8EE;
+    --dark-text: #302321;
+}
+
+/* ЗАГАЛЬНІ НАЛАШТУВАННЯ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--dark-text);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ==========================================
+   ШАПКА САЙТУ
+========================================== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 130px;
+    padding: 20px 40px;
+    background-color: var(--cream);
+    border-bottom: 3px solid var(--gold);
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 18px;
+}
+
+.logo-link {
+    display: block;
+    text-decoration: none;
+}
+
+.logo {
+    display: block;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.site-title {
+    color: var(--burgundy);
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   НАВІГАЦІЯ
+========================================== */
+
+.navigation {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 0 20px;
+}
+
+.navigation a {
+    position: relative;
+    padding: 8px 0;
+    color: var(--burgundy);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+    width: 100%;
+}
+
+.navigation a.active {
+    color: var(--dark-burgundy);
+}
+
+/* ==========================================
+   ГОЛОВНА — БАНЕР
+========================================== */
+
+.hero {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    background-color: var(--dark-burgundy);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ==========================================
+   ГОЛОВНА — БЛОК ПРО РІЗДВО
+========================================== */
+
+.about-christmas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 60px 50px 80px;
+    gap: 35px;
+}
+
+.about-text {
+    width: 100%;
+}
+
+.about-text h2 {
+    color: var(--burgundy);
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 35px;
+}
+
+.about-text h2::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-top: 18px;
+    background-color: var(--gold);
+    border-radius: 4px;
+}
+
+.about-text p {
+    width: 100%;
+    font-size: 22px;
+    line-height: 1.7;
+    margin: 0 0 28px;
+    text-indent: 30px;
+    text-align: justify;
+    overflow-wrap: break-word;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text strong {
+    color: var(--burgundy);
+    font-weight: bold;
+}
+
+/* МАЛЮНКИ ГОЛОВНОЇ СТОРІНКИ */
+
+.about-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 100px;
+    padding-top: 20px;
+}
+
+.about-images img {
+    display: block;
+    width: 325px;
+    max-width: 100%;
+    height: auto;
+    max-height: 325px;
+    object-fit: contain;
+}
+
+/* ==========================================
+   СТОРІНКА "ТРАДИЦІЇ"
+========================================== */
+
+/* ВСТУП */
+
+.traditions-intro {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 70px 50px 45px;
+}
+
+.traditions-intro h1 {
+    color: var(--burgundy);
+    font-size: 44px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.traditions-line {
+    width: 130px;
+    height: 4px;
+    margin: 0 auto 40px;
+    background-color: var(--gold);
+    border-radius: 4px;
+}
+
+.traditions-intro p {
+    font-size: 22px;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 25px;
+}
+
+/* БЛОКИ ТРАДИЦІЙ */
+
+.tradition-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    align-items: center;
+    gap: 65px;
+
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 65px 50px;
+
+    border-bottom: 1px solid var(--light-gold);
+}
+
+/* ЧЕРГУВАННЯ СТОРІН */
+
+.tradition-block.tradition-reverse {
+    grid-template-columns: 360px minmax(0, 1fr);
+}
+
+.tradition-reverse .tradition-picture,
+.tradition-reverse .tradition-symbol {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.tradition-reverse .tradition-content {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* ТЕКСТ */
+
+.tradition-content h2 {
+    color: var(--burgundy);
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.tradition-content h2::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 3px;
+    margin-top: 15px;
+    background-color: var(--gold);
+}
+
+.tradition-content p {
+    font-size: 21px;
+    line-height: 1.75;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 24px;
+}
+
+.tradition-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* МАЛЮНОК ДІДУХА */
+
+.tradition-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tradition-picture img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    max-height: 380px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ДЕКОРАТИВНІ БЛОКИ */
+
+.tradition-symbol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    min-height: 280px;
+    padding: 35px;
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    background-color: #FFF2DE;
+    text-align: center;
+}
+
+.symbol-icon {
+    color: var(--gold);
+    font-size: 70px;
+    line-height: 1;
+}
+
+.tradition-symbol p {
+    color: var(--burgundy);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   ПЛАНШЕТИ
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .navigation {
+        gap: 25px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    /* ГОЛОВНА */
+
+    .about-christmas {
+        padding: 50px 30px 70px;
+    }
+
+    .about-text h2 {
+        font-size: 36px;
+    }
+
+    .about-text p {
+        font-size: 20px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .about-images {
+        gap: 50px;
+    }
+
+    .about-images img {
+        width: 290px;
+        max-height: 290px;
+    }
+
+    /* ТРАДИЦІЇ */
+
+    .traditions-intro {
+        padding: 55px 30px 30px;
+    }
+
+    .traditions-intro h1 {
+        font-size: 38px;
+    }
+
+    .traditions-intro p {
+        font-size: 20px;
+    }
+
+    .tradition-block {
+        grid-template-columns: minmax(0, 1fr) 270px;
+        gap: 30px;
+        padding: 45px 30px;
+    }
+
+    .tradition-block.tradition-reverse {
+        grid-template-columns: 270px minmax(0, 1fr);
+    }
+
+    .tradition-content h2 {
+        font-size: 30px;
+    }
+
+    .tradition-content p {
+        font-size: 19px;
+    }
+
+    .tradition-picture img {
+        max-width: 260px;
+    }
+
+    .tradition-symbol p {
+        font-size: 21px;
+    }
+}
+
+/* ==========================================
+   ТЕЛЕФОНИ
+========================================== */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        padding: 18px 15px;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .site-title {
+        font-size: 17px;
+    }
+
+    .navigation {
+        gap: 15px;
+        padding: 0 5px;
+    }
+
+    .navigation a {
+        font-size: 15px;
+    }
+
+    .hero {
+        height: 260px;
+    }
+
+    /* ГОЛОВНА */
+
+    .about-christmas {
+        padding: 40px 20px 60px;
+        gap: 25px;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+
+    .about-text p {
+        font-size: 18px;
+        line-height: 1.75;
+        margin-bottom: 24px;
+        text-indent: 25px;
+        text-align: left;
+    }
+
+    .about-images {
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+        padding-top: 10px;
+    }
+
+    .about-images img {
+        width: 250px;
+        max-height: 250px;
+    }
+
+    /* ТРАДИЦІЇ */
+
+    .traditions-intro {
+        padding: 40px 20px 20px;
+    }
+
+    .traditions-intro h1 {
+        font-size: 32px;
+    }
+
+    .traditions-intro p {
+        font-size: 18px;
+        line-height: 1.75;
+        text-align: left;
+        text-indent: 25px;
+    }
+
+    .tradition-block,
+    .tradition-block.tradition-reverse {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .tradition-content h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .tradition-content p {
+        font-size: 18px;
+        line-height: 1.75;
+        text-align: left;
+        text-indent: 25px;
+    }
+
+    .tradition-picture img {
+        max-width: 280px;
+    }
+
+    .tradition-symbol {
+        width: 100%;
+        min-height: 230px;
+    }
+
+    .tradition-symbol p {
+        font-size: 21px;
+    }
+}

@@ -1,0 +1,269 @@
+/* ВСТУП */
+
+.history-intro {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 70px 50px 45px;
+}
+
+.history-intro h1 {
+    color: var(--burgundy);
+    font-size: 44px;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.history-line {
+    width: 130px;
+    height: 4px;
+    margin: 0 auto 40px;
+    background-color: var(--gold);
+    border-radius: 4px;
+}
+
+.history-intro p {
+    font-size: 22px;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 25px;
+}
+
+/* ==========================================
+   БЛОКИ З МАЛЮНКАМИ
+========================================== */
+
+.history-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 500px;
+    align-items: center;
+    gap: 50px;
+
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 65px 50px;
+
+    border-bottom: 1px solid var(--light-gold);
+}
+
+/* МАЛЮНОК ЛІВОРУЧ, ТЕКСТ ПРАВОРУЧ */
+
+.history-section.history-reverse {
+    grid-template-columns: 500px minmax(0, 1fr);
+}
+
+.history-reverse .history-picture {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.history-reverse .history-content {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* ТЕКСТ */
+
+.history-content h2 {
+    color: var(--burgundy);
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.history-content h2::after {
+    content: "";
+    display: block;
+    width: 85px;
+    height: 3px;
+    margin-top: 15px;
+    background-color: var(--gold);
+}
+
+.history-content p {
+    font-size: 21px;
+    line-height: 1.75;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 24px;
+}
+
+.history-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* МАЛЮНКИ */
+
+.history-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.history-picture img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.history-star-picture img {
+    max-width: 390px;
+    max-height: 430px;
+}
+
+/* ==========================================
+   ТЕКСТОВІ РОЗДІЛИ
+========================================== */
+
+.history-text-section {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 65px 50px;
+    border-bottom: 1px solid var(--light-gold);
+}
+
+.history-text-section h2 {
+    color: var(--burgundy);
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.history-small-line {
+    width: 85px;
+    height: 3px;
+    margin-bottom: 30px;
+    background-color: var(--gold);
+}
+
+.history-text-section p {
+    font-size: 21px;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 30px;
+    margin-bottom: 25px;
+}
+
+.history-text-section p:last-child {
+    margin-bottom: 0;
+}
+
+.history-last {
+    border-bottom: none;
+    padding-bottom: 90px;
+}
+
+/* ==========================================
+   ПЛАНШЕТИ
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .history-intro {
+        padding: 55px 30px 30px;
+    }
+
+    .history-intro h1 {
+        font-size: 38px;
+    }
+
+    .history-intro p {
+        font-size: 20px;
+    }
+
+    .history-section {
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 30px;
+        padding: 45px 30px;
+    }
+
+    .history-section.history-reverse {
+        grid-template-columns: 330px minmax(0, 1fr);
+    }
+
+    .history-content h2,
+    .history-text-section h2 {
+        font-size: 30px;
+    }
+
+    .history-content p,
+    .history-text-section p {
+        font-size: 19px;
+    }
+
+    .history-picture img {
+        max-width: 330px;
+    }
+
+    .history-star-picture img {
+        max-width: 290px;
+    }
+
+    .history-text-section {
+        padding: 50px 30px;
+    }
+}
+
+/* ==========================================
+   ТЕЛЕФОНИ
+========================================== */
+
+@media (max-width: 600px) {
+
+    .history-intro {
+        padding: 40px 20px 20px;
+    }
+
+    .history-intro h1 {
+        font-size: 32px;
+    }
+
+    .history-intro p {
+        font-size: 18px;
+        line-height: 1.75;
+        text-align: left;
+        text-indent: 25px;
+    }
+
+    .history-section,
+    .history-section.history-reverse {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+    }
+
+    .history-content h2,
+    .history-text-section h2 {
+        font-size: 28px;
+    }
+
+    .history-content p,
+    .history-text-section p {
+        font-size: 18px;
+        line-height: 1.75;
+        text-align: left;
+        text-indent: 25px;
+    }
+
+    .history-picture img {
+        max-width: 100%;
+    }
+
+    .history-star-picture img {
+        max-width: 300px;
+    }
+
+    .history-text-section {
+        padding: 40px 20px;
+    }
+
+    .history-last {
+        padding-bottom: 65px;
+    }
+}
